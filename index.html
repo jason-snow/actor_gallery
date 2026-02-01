@@ -104,6 +104,48 @@
             color: #666;
             font-size: 0.85rem;
         }
+        /* Context menu */
+        .context-menu {
+            position: fixed;
+            z-index: 2000;
+            background: rgba(20,20,30,0.98);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            padding: 10px;
+            min-width: 240px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            display: none;
+        }
+        .context-menu.active { display: block; }
+        .context-menu .title {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+        .context-menu .hint {
+            color: #aaa;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .context-menu .actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .context-menu button {
+            background: #2a2a4a;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .context-menu button:hover {
+            background: #3a3a6a;
+        }
     </style>
 </head>
 <body>
@@ -112,255 +154,255 @@
         <p id="count">VRM Character Thumbnails</p>
     </header>
     <div class="gallery">
-        <div class="gallery-item" onclick="openModal('thumbs/1d8AHFH.png')">
+        <div class="gallery-item" data-id="1d8AHFH" onclick="openModal('thumbs/1d8AHFH.png')">
             <img src="thumbs/1d8AHFH.png" alt="1d8AHFH" loading="lazy">
             <div class="label">1d8AHFH • 26-02-01 16:07</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/OFyIjUJ.png')">
+        <div class="gallery-item" data-id="OFyIjUJ" onclick="openModal('thumbs/OFyIjUJ.png')">
             <img src="thumbs/OFyIjUJ.png" alt="OFyIjUJ" loading="lazy">
             <div class="label">OFyIjUJ • 26-02-01 15:12</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/Sns2xXG.png')">
+        <div class="gallery-item" data-id="Sns2xXG" onclick="openModal('thumbs/Sns2xXG.png')">
             <img src="thumbs/Sns2xXG.png" alt="Sns2xXG" loading="lazy">
             <div class="label">Sns2xXG • 26-02-01 15:11</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/cnKUdIe.png')">
+        <div class="gallery-item" data-id="cnKUdIe" onclick="openModal('thumbs/cnKUdIe.png')">
             <img src="thumbs/cnKUdIe.png" alt="cnKUdIe" loading="lazy">
             <div class="label">cnKUdIe • 26-02-01 13:05</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/VOXwmpb.png')">
+        <div class="gallery-item" data-id="VOXwmpb" onclick="openModal('thumbs/VOXwmpb.png')">
             <img src="thumbs/VOXwmpb.png" alt="VOXwmpb" loading="lazy">
             <div class="label">VOXwmpb • 26-02-01 12:40</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/6BzTUEP.png')">
+        <div class="gallery-item" data-id="6BzTUEP" onclick="openModal('thumbs/6BzTUEP.png')">
             <img src="thumbs/6BzTUEP.png" alt="6BzTUEP" loading="lazy">
             <div class="label">6BzTUEP • 26-01-31 22:13</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/skz4V4o.png')">
+        <div class="gallery-item" data-id="skz4V4o" onclick="openModal('thumbs/skz4V4o.png')">
             <img src="thumbs/skz4V4o.png" alt="skz4V4o" loading="lazy">
             <div class="label">skz4V4o • 26-01-31 14:46</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/BNpZsFO.png')">
+        <div class="gallery-item" data-id="BNpZsFO" onclick="openModal('thumbs/BNpZsFO.png')">
             <img src="thumbs/BNpZsFO.png" alt="BNpZsFO" loading="lazy">
             <div class="label">BNpZsFO • 26-01-31 14:45</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/UnBP0xR.png')">
+        <div class="gallery-item" data-id="UnBP0xR" onclick="openModal('thumbs/UnBP0xR.png')">
             <img src="thumbs/UnBP0xR.png" alt="UnBP0xR" loading="lazy">
             <div class="label">UnBP0xR • 26-01-31 14:43</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/rPI7okx.png')">
+        <div class="gallery-item" data-id="rPI7okx" onclick="openModal('thumbs/rPI7okx.png')">
             <img src="thumbs/rPI7okx.png" alt="rPI7okx" loading="lazy">
             <div class="label">rPI7okx • 26-01-31 14:42</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/DU8CzuM.png')">
+        <div class="gallery-item" data-id="DU8CzuM" onclick="openModal('thumbs/DU8CzuM.png')">
             <img src="thumbs/DU8CzuM.png" alt="DU8CzuM" loading="lazy">
             <div class="label">DU8CzuM • 26-01-31 14:39</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/Fut1zc3.png')">
+        <div class="gallery-item" data-id="Fut1zc3" onclick="openModal('thumbs/Fut1zc3.png')">
             <img src="thumbs/Fut1zc3.png" alt="Fut1zc3" loading="lazy">
             <div class="label">Fut1zc3 • 26-01-31 14:11</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/FM9alPx.png')">
+        <div class="gallery-item" data-id="FM9alPx" onclick="openModal('thumbs/FM9alPx.png')">
             <img src="thumbs/FM9alPx.png" alt="FM9alPx" loading="lazy">
             <div class="label">FM9alPx • 26-01-30 21:37</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/tdQGV0v.png')">
+        <div class="gallery-item" data-id="tdQGV0v" onclick="openModal('thumbs/tdQGV0v.png')">
             <img src="thumbs/tdQGV0v.png" alt="tdQGV0v" loading="lazy">
             <div class="label">tdQGV0v • 26-01-30 21:04</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/hh8SeEU.png')">
+        <div class="gallery-item" data-id="hh8SeEU" onclick="openModal('thumbs/hh8SeEU.png')">
             <img src="thumbs/hh8SeEU.png" alt="hh8SeEU" loading="lazy">
             <div class="label">hh8SeEU • 26-01-30 20:55</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/4SekKLn.png')">
+        <div class="gallery-item" data-id="4SekKLn" onclick="openModal('thumbs/4SekKLn.png')">
             <img src="thumbs/4SekKLn.png" alt="4SekKLn" loading="lazy">
             <div class="label">4SekKLn • 26-01-30 20:52</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/0kaJPrc.png')">
+        <div class="gallery-item" data-id="0kaJPrc" onclick="openModal('thumbs/0kaJPrc.png')">
             <img src="thumbs/0kaJPrc.png" alt="0kaJPrc" loading="lazy">
             <div class="label">0kaJPrc • 26-01-30 20:44</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/YMPMxY8.png')">
+        <div class="gallery-item" data-id="YMPMxY8" onclick="openModal('thumbs/YMPMxY8.png')">
             <img src="thumbs/YMPMxY8.png" alt="YMPMxY8" loading="lazy">
             <div class="label">YMPMxY8 • 26-01-30 20:30</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/pcUrhwX.png')">
+        <div class="gallery-item" data-id="pcUrhwX" onclick="openModal('thumbs/pcUrhwX.png')">
             <img src="thumbs/pcUrhwX.png" alt="pcUrhwX" loading="lazy">
             <div class="label">pcUrhwX • 26-01-30 20:18</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/vh2Ckxj.png')">
+        <div class="gallery-item" data-id="vh2Ckxj" onclick="openModal('thumbs/vh2Ckxj.png')">
             <img src="thumbs/vh2Ckxj.png" alt="vh2Ckxj" loading="lazy">
             <div class="label">vh2Ckxj • 26-01-30 20:14</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/BeaETlG.png')">
+        <div class="gallery-item" data-id="BeaETlG" onclick="openModal('thumbs/BeaETlG.png')">
             <img src="thumbs/BeaETlG.png" alt="BeaETlG" loading="lazy">
             <div class="label">BeaETlG • 26-01-30 15:45</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/oBTMmQH.png')">
+        <div class="gallery-item" data-id="oBTMmQH" onclick="openModal('thumbs/oBTMmQH.png')">
             <img src="thumbs/oBTMmQH.png" alt="oBTMmQH" loading="lazy">
             <div class="label">oBTMmQH • 26-01-30 12:05</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/jUI7HE6.png')">
+        <div class="gallery-item" data-id="jUI7HE6" onclick="openModal('thumbs/jUI7HE6.png')">
             <img src="thumbs/jUI7HE6.png" alt="jUI7HE6" loading="lazy">
             <div class="label">jUI7HE6 • 26-01-29 23:12</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/dGSXoPv.png')">
+        <div class="gallery-item" data-id="dGSXoPv" onclick="openModal('thumbs/dGSXoPv.png')">
             <img src="thumbs/dGSXoPv.png" alt="dGSXoPv" loading="lazy">
             <div class="label">dGSXoPv • 26-01-29 22:57</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/KwctMsq.png')">
+        <div class="gallery-item" data-id="KwctMsq" onclick="openModal('thumbs/KwctMsq.png')">
             <img src="thumbs/KwctMsq.png" alt="KwctMsq" loading="lazy">
             <div class="label">KwctMsq • 26-01-29 19:29</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/9FhOunZ.png')">
+        <div class="gallery-item" data-id="9FhOunZ" onclick="openModal('thumbs/9FhOunZ.png')">
             <img src="thumbs/9FhOunZ.png" alt="9FhOunZ" loading="lazy">
             <div class="label">9FhOunZ • 26-01-29 19:26</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/o7q5vwu.png')">
+        <div class="gallery-item" data-id="o7q5vwu" onclick="openModal('thumbs/o7q5vwu.png')">
             <img src="thumbs/o7q5vwu.png" alt="o7q5vwu" loading="lazy">
             <div class="label">o7q5vwu • 26-01-29 19:26</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/P7nZ6Up.png')">
+        <div class="gallery-item" data-id="P7nZ6Up" onclick="openModal('thumbs/P7nZ6Up.png')">
             <img src="thumbs/P7nZ6Up.png" alt="P7nZ6Up" loading="lazy">
             <div class="label">P7nZ6Up • 26-01-28 22:51</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/HiECo8J.png')">
+        <div class="gallery-item" data-id="HiECo8J" onclick="openModal('thumbs/HiECo8J.png')">
             <img src="thumbs/HiECo8J.png" alt="HiECo8J" loading="lazy">
             <div class="label">HiECo8J • 26-01-28 22:51</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/pG3fcbP.png')">
+        <div class="gallery-item" data-id="pG3fcbP" onclick="openModal('thumbs/pG3fcbP.png')">
             <img src="thumbs/pG3fcbP.png" alt="pG3fcbP" loading="lazy">
             <div class="label">pG3fcbP • 26-01-28 22:51</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/CO7LnoO.png')">
+        <div class="gallery-item" data-id="CO7LnoO" onclick="openModal('thumbs/CO7LnoO.png')">
             <img src="thumbs/CO7LnoO.png" alt="CO7LnoO" loading="lazy">
             <div class="label">CO7LnoO • 26-01-28 22:51</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/gIY3YUt.png')">
+        <div class="gallery-item" data-id="gIY3YUt" onclick="openModal('thumbs/gIY3YUt.png')">
             <img src="thumbs/gIY3YUt.png" alt="gIY3YUt" loading="lazy">
             <div class="label">gIY3YUt • 26-01-28 22:06</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/pSFZ8x5.png')">
+        <div class="gallery-item" data-id="pSFZ8x5" onclick="openModal('thumbs/pSFZ8x5.png')">
             <img src="thumbs/pSFZ8x5.png" alt="pSFZ8x5" loading="lazy">
             <div class="label">pSFZ8x5 • 26-01-28 22:06</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/Id4TwCe.png')">
+        <div class="gallery-item" data-id="Id4TwCe" onclick="openModal('thumbs/Id4TwCe.png')">
             <img src="thumbs/Id4TwCe.png" alt="Id4TwCe" loading="lazy">
             <div class="label">Id4TwCe • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/xU3emrr.png')">
+        <div class="gallery-item" data-id="xU3emrr" onclick="openModal('thumbs/xU3emrr.png')">
             <img src="thumbs/xU3emrr.png" alt="xU3emrr" loading="lazy">
             <div class="label">xU3emrr • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/H7krQyA.png')">
+        <div class="gallery-item" data-id="H7krQyA" onclick="openModal('thumbs/H7krQyA.png')">
             <img src="thumbs/H7krQyA.png" alt="H7krQyA" loading="lazy">
             <div class="label">H7krQyA • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/DAzzfMy.png')">
+        <div class="gallery-item" data-id="DAzzfMy" onclick="openModal('thumbs/DAzzfMy.png')">
             <img src="thumbs/DAzzfMy.png" alt="DAzzfMy" loading="lazy">
             <div class="label">DAzzfMy • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/Jbi30BC.png')">
+        <div class="gallery-item" data-id="Jbi30BC" onclick="openModal('thumbs/Jbi30BC.png')">
             <img src="thumbs/Jbi30BC.png" alt="Jbi30BC" loading="lazy">
             <div class="label">Jbi30BC • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/kbKG05O.png')">
+        <div class="gallery-item" data-id="kbKG05O" onclick="openModal('thumbs/kbKG05O.png')">
             <img src="thumbs/kbKG05O.png" alt="kbKG05O" loading="lazy">
             <div class="label">kbKG05O • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/8zq3bul.png')">
+        <div class="gallery-item" data-id="8zq3bul" onclick="openModal('thumbs/8zq3bul.png')">
             <img src="thumbs/8zq3bul.png" alt="8zq3bul" loading="lazy">
             <div class="label">8zq3bul • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/LMzlhO0.png')">
+        <div class="gallery-item" data-id="LMzlhO0" onclick="openModal('thumbs/LMzlhO0.png')">
             <img src="thumbs/LMzlhO0.png" alt="LMzlhO0" loading="lazy">
             <div class="label">LMzlhO0 • 26-01-28 21:17</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/j44fx2e.png')">
+        <div class="gallery-item" data-id="j44fx2e" onclick="openModal('thumbs/j44fx2e.png')">
             <img src="thumbs/j44fx2e.png" alt="j44fx2e" loading="lazy">
             <div class="label">j44fx2e • 26-01-27 22:44</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/FVL6XBH.png')">
+        <div class="gallery-item" data-id="FVL6XBH" onclick="openModal('thumbs/FVL6XBH.png')">
             <img src="thumbs/FVL6XBH.png" alt="FVL6XBH" loading="lazy">
             <div class="label">FVL6XBH • 26-01-27 22:30</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/S5YopI9.png')">
+        <div class="gallery-item" data-id="S5YopI9" onclick="openModal('thumbs/S5YopI9.png')">
             <img src="thumbs/S5YopI9.png" alt="S5YopI9" loading="lazy">
             <div class="label">S5YopI9 • 26-01-27 22:16</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/xQOVyFW.png')">
+        <div class="gallery-item" data-id="xQOVyFW" onclick="openModal('thumbs/xQOVyFW.png')">
             <img src="thumbs/xQOVyFW.png" alt="xQOVyFW" loading="lazy">
             <div class="label">xQOVyFW • 26-01-27 22:12</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/g6dnb6c.png')">
+        <div class="gallery-item" data-id="g6dnb6c" onclick="openModal('thumbs/g6dnb6c.png')">
             <img src="thumbs/g6dnb6c.png" alt="g6dnb6c" loading="lazy">
             <div class="label">g6dnb6c • 26-01-27 22:05</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/eO3Qv94.png')">
+        <div class="gallery-item" data-id="eO3Qv94" onclick="openModal('thumbs/eO3Qv94.png')">
             <img src="thumbs/eO3Qv94.png" alt="eO3Qv94" loading="lazy">
             <div class="label">eO3Qv94 • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/xcf49jN.png')">
+        <div class="gallery-item" data-id="xcf49jN" onclick="openModal('thumbs/xcf49jN.png')">
             <img src="thumbs/xcf49jN.png" alt="xcf49jN" loading="lazy">
             <div class="label">xcf49jN • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/zcgUyIf.png')">
+        <div class="gallery-item" data-id="zcgUyIf" onclick="openModal('thumbs/zcgUyIf.png')">
             <img src="thumbs/zcgUyIf.png" alt="zcgUyIf" loading="lazy">
             <div class="label">zcgUyIf • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/n2UstyQ.png')">
+        <div class="gallery-item" data-id="n2UstyQ" onclick="openModal('thumbs/n2UstyQ.png')">
             <img src="thumbs/n2UstyQ.png" alt="n2UstyQ" loading="lazy">
             <div class="label">n2UstyQ • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/YAhPSVw.png')">
+        <div class="gallery-item" data-id="YAhPSVw" onclick="openModal('thumbs/YAhPSVw.png')">
             <img src="thumbs/YAhPSVw.png" alt="YAhPSVw" loading="lazy">
             <div class="label">YAhPSVw • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/d0nwdxJ.png')">
+        <div class="gallery-item" data-id="d0nwdxJ" onclick="openModal('thumbs/d0nwdxJ.png')">
             <img src="thumbs/d0nwdxJ.png" alt="d0nwdxJ" loading="lazy">
             <div class="label">d0nwdxJ • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/lRQqLBx.png')">
+        <div class="gallery-item" data-id="lRQqLBx" onclick="openModal('thumbs/lRQqLBx.png')">
             <img src="thumbs/lRQqLBx.png" alt="lRQqLBx" loading="lazy">
             <div class="label">lRQqLBx • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/KOQsv0g.png')">
+        <div class="gallery-item" data-id="KOQsv0g" onclick="openModal('thumbs/KOQsv0g.png')">
             <img src="thumbs/KOQsv0g.png" alt="KOQsv0g" loading="lazy">
             <div class="label">KOQsv0g • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/6dlfExP.png')">
+        <div class="gallery-item" data-id="6dlfExP" onclick="openModal('thumbs/6dlfExP.png')">
             <img src="thumbs/6dlfExP.png" alt="6dlfExP" loading="lazy">
             <div class="label">6dlfExP • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/oXgjjSV.png')">
+        <div class="gallery-item" data-id="oXgjjSV" onclick="openModal('thumbs/oXgjjSV.png')">
             <img src="thumbs/oXgjjSV.png" alt="oXgjjSV" loading="lazy">
             <div class="label">oXgjjSV • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/AHcnlQL.png')">
+        <div class="gallery-item" data-id="AHcnlQL" onclick="openModal('thumbs/AHcnlQL.png')">
             <img src="thumbs/AHcnlQL.png" alt="AHcnlQL" loading="lazy">
             <div class="label">AHcnlQL • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/RXrGN0L.png')">
+        <div class="gallery-item" data-id="RXrGN0L" onclick="openModal('thumbs/RXrGN0L.png')">
             <img src="thumbs/RXrGN0L.png" alt="RXrGN0L" loading="lazy">
             <div class="label">RXrGN0L • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/TvzjQOn.png')">
+        <div class="gallery-item" data-id="TvzjQOn" onclick="openModal('thumbs/TvzjQOn.png')">
             <img src="thumbs/TvzjQOn.png" alt="TvzjQOn" loading="lazy">
             <div class="label">TvzjQOn • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/UU4eLh5.png')">
+        <div class="gallery-item" data-id="UU4eLh5" onclick="openModal('thumbs/UU4eLh5.png')">
             <img src="thumbs/UU4eLh5.png" alt="UU4eLh5" loading="lazy">
             <div class="label">UU4eLh5 • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/a5joj2Z.png')">
+        <div class="gallery-item" data-id="a5joj2Z" onclick="openModal('thumbs/a5joj2Z.png')">
             <img src="thumbs/a5joj2Z.png" alt="a5joj2Z" loading="lazy">
             <div class="label">a5joj2Z • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/4ta04Vz.png')">
+        <div class="gallery-item" data-id="4ta04Vz" onclick="openModal('thumbs/4ta04Vz.png')">
             <img src="thumbs/4ta04Vz.png" alt="4ta04Vz" loading="lazy">
             <div class="label">4ta04Vz • 26-01-27 21:59</div>
         </div>
-        <div class="gallery-item" onclick="openModal('thumbs/k3tIP0X.png')">
+        <div class="gallery-item" data-id="k3tIP0X" onclick="openModal('thumbs/k3tIP0X.png')">
             <img src="thumbs/k3tIP0X.png" alt="k3tIP0X" loading="lazy">
             <div class="label">k3tIP0X • 26-01-27 21:59</div>
         </div>
@@ -369,13 +411,26 @@
         <span class="modal-close">&times;</span>
         <img id="modal-img" src="" alt="Preview">
     </div>
+
+    <div class="context-menu" id="ctx" role="dialog" aria-modal="false">
+        <div class="title" id="ctx-title">ID</div>
+        <div class="hint">
+            이 썸네일의 id입니다. 삭제 요청은 id 기반으로 진행됩니다.
+        </div>
+        <div class="actions">
+            <button type="button" onclick="copyCtxId()">Copy ID</button>
+            <button type="button" onclick="copyDeleteCmd()">Copy delete cmd</button>
+            <button type="button" onclick="closeCtx()">Close</button>
+        </div>
+    </div>
+
     <footer>
         <p>Generated by VRM Automation Pipeline</p>
     </footer>
     <script>
         document.getElementById('count').textContent = 
             document.querySelectorAll('.gallery-item').length + ' characters';
-        
+
         function openModal(src) {
             document.getElementById('modal-img').src = src;
             document.getElementById('modal').classList.add('active');
@@ -383,8 +438,76 @@
         function closeModal() {
             document.getElementById('modal').classList.remove('active');
         }
+
+        // Context menu (right click / long press)
+        let ctxId = null;
+        const ctx = document.getElementById('ctx');
+        const ctxTitle = document.getElementById('ctx-title');
+
+        function openCtx(id, x, y) {
+            ctxId = id;
+            ctxTitle.textContent = `ID: ${id}`;
+            ctx.style.left = Math.min(x, window.innerWidth - 260) + 'px';
+            ctx.style.top = Math.min(y, window.innerHeight - 160) + 'px';
+            ctx.classList.add('active');
+        }
+        function closeCtx() {
+            ctx.classList.remove('active');
+            ctxId = null;
+        }
+        async function copyText(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch (e) {
+                // fallback
+                window.prompt('Copy to clipboard:', text);
+            }
+        }
+        function copyCtxId() {
+            if (!ctxId) return;
+            copyText(ctxId);
+        }
+        function copyDeleteCmd() {
+            if (!ctxId) return;
+            // Slack/DM에서 사용할 삭제 요청 커맨드(백엔드 연결은 추후)
+            copyText(`delete ${ctxId}`);
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!ctx.classList.contains('active')) return;
+            if (!ctx.contains(e.target)) closeCtx();
+        });
+
+        // Prevent context menu + enable custom menu
+        let longPressTimer = null;
+        document.querySelectorAll('.gallery-item').forEach((el) => {
+            el.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openCtx(el.dataset.id, e.clientX, e.clientY);
+            });
+
+            el.addEventListener('touchstart', (e) => {
+                if (longPressTimer) clearTimeout(longPressTimer);
+                const t = e.touches[0];
+                longPressTimer = setTimeout(() => {
+                    openCtx(el.dataset.id, t.clientX, t.clientY);
+                }, 500);
+            }, {passive: true});
+
+            el.addEventListener('touchend', () => {
+                if (longPressTimer) clearTimeout(longPressTimer);
+            });
+            el.addEventListener('touchmove', () => {
+                if (longPressTimer) clearTimeout(longPressTimer);
+            });
+        });
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
+            if (e.key === 'Escape') {
+                closeModal();
+                closeCtx();
+            }
         });
     </script>
 </body>
