@@ -481,8 +481,7 @@
         }
         function copyDeleteCmd() {
             if (!ctxId) return;
-            // Slack/DM에서 사용할 삭제 요청 커맨드(백엔드 연결은 추후)
-            copyText(`delete ${ctxId}`);
+            copyText(`vrmdelete! ${ctxId}`);
         }
 
         document.addEventListener('click', (e) => {
